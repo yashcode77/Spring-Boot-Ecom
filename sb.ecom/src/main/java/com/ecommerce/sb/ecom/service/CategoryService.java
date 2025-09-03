@@ -10,4 +10,6 @@ public interface CategoryService {
 
     List<Category> getAllCategories();
     void createCategory(Category category);
+
+    Category updateCategory(Category category, Long categoryId);
 }
