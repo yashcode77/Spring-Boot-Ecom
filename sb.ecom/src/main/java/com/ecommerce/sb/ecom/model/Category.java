@@ -1,36 +1,28 @@
 package com.ecommerce.sb.ecom.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
 @Entity(name="categories")
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Category {
     @Id
-    private long CategoryId;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long CategoryId;
+
+    @NotBlank
     private String CategoryName;
 
     public Category(long categoryId, String categoryName) {
         this.CategoryId = categoryId;
         this.CategoryName = categoryName;
-    }
-
-    public Category() {
-
-    }
-
-    public String getCategoryName() {
-        return CategoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        CategoryName = categoryName;
-    }
-
-    public long getCategoryId() {
-        return CategoryId;
-    }
-
-    public void setCategoryId(long categoryId) {
-        this.CategoryId = categoryId;
     }
 }
