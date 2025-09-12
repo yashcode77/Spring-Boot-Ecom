@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Entity(name="categories")
@@ -17,6 +18,7 @@ public class Category {
     private Long CategoryId;
 
     @NotBlank
+    @Size(min=5,message="Category name must contain at least 5 characters")
     private String CategoryName;
 
     public Category(long categoryId, String categoryName) {
