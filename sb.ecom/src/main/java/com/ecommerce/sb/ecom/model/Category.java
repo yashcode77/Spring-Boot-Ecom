@@ -19,10 +19,10 @@ public class Category {
 
     @NotBlank
     @Size(min=5,message="Category name must contain at least 5 characters")
-    private String CategoryName;
+    private String categoryName;
 
     public Category(long categoryId, String categoryName) {
         this.CategoryId = categoryId;
-        this.CategoryName = categoryName;
+        this.categoryName = categoryName;
     }
 }
